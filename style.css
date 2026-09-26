@@ -1,0 +1,975 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --blue: #2563eb;
+    --cyan: #06b6d4;
+    --orange: #f59e0b;
+    --purple: #7c3aed;
+
+    --background: #f4f7fb;
+    --card: #ffffff;
+
+    --text: #172033;
+    --muted: #64748b;
+
+    --border: #e5e7eb;
+
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    padding-bottom: 80px;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+/* HEADER */
+
+.header {
+
+    height: 65px;
+
+    background: var(--card);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+    box-shadow: 0 3px 15px #00000010;
+
+}
+
+
+.logo {
+
+    color: var(--blue);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+#darkMode {
+
+    border: none;
+
+    background: none;
+
+    font-size: 23px;
+
+}
+
+
+/* PAGE */
+
+.page {
+
+    display: none;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+
+.page.active {
+
+    display: block;
+
+}
+
+
+/* WELCOME */
+
+.welcome {
+
+    margin-top: 10px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #168fe8,
+            #14b8e8
+        );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+}
+
+
+.welcome small {
+
+    font-weight: bold;
+
+}
+
+
+.welcome h1 {
+
+    margin: 8px 0;
+
+    font-size: 27px;
+
+}
+
+
+.welcome p {
+
+    max-width: 600px;
+
+}
+
+
+.math-symbol {
+
+    font-size: 80px;
+
+    opacity: .2;
+
+    font-weight: bold;
+
+}
+
+
+/* BANNER */
+
+.banner {
+
+    margin-top: 18px;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172f91,
+            #3262e5
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.banner span {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.banner h2 {
+
+    margin: 8px 0;
+
+}
+
+
+.banner p {
+
+    margin-bottom: 15px;
+
+}
+
+
+.banner button {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #2563eb;
+
+    font-weight: bold;
+
+}
+
+
+.big-symbol {
+
+    font-size: 90px;
+
+    opacity: .2;
+
+}
+
+
+/* STATS */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin: 18px 0;
+
+}
+
+
+.stats div {
+
+    background: var(--card);
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 17px;
+
+    border: 1px solid var(--border);
+
+}
+
+
+.stats b {
+
+    display: block;
+
+    color: var(--blue);
+
+    font-size: 25px;
+
+}
+
+
+.stats span {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* MENU */
+
+.judul-section {
+
+    margin: 20px 0 12px;
+
+}
+
+
+.menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.menu-card {
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    border-radius: 20px;
+
+    padding: 17px;
+
+    text-align: left;
+
+}
+
+
+.menu-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.menu-card b {
+
+    display: block;
+
+}
+
+
+.menu-card span {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.blue .menu-icon {
+
+    background: var(--blue);
+
+}
+
+
+.cyan .menu-icon {
+
+    background: var(--cyan);
+
+}
+
+
+.orange .menu-icon {
+
+    background: var(--orange);
+
+}
+
+
+.purple .menu-icon {
+
+    background: var(--purple);
+
+}
+
+
+/* PAGE TITLE */
+
+.page-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.page-title button {
+
+    background: none;
+
+    border: none;
+
+    font-size: 25px;
+
+}
+
+
+.page-title small {
+
+    color: var(--blue);
+
+    font-weight: bold;
+
+}
+
+
+/* MATERI */
+
+.materi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.materi-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+}
+
+
+.materi-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.materi-number {
+
+    color: var(--blue);
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+}
+
+
+.materi-card h3 {
+
+    margin: 5px 0;
+
+}
+
+
+.materi-card p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.materi-card strong {
+
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+}
+
+
+/* DETAIL */
+
+.detail-box {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.rumus-besar {
+
+    margin-top: 12px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+}
+
+
+.langkah {
+
+    padding: 13px 0;
+
+    border-bottom: 1px dashed var(--border);
+
+}
+
+
+.langkah b {
+
+    color: var(--blue);
+
+}
+
+
+.tombol {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 13px 18px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+/* QUIZ */
+
+.quiz-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+
+.quiz-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.progress {
+
+    height: 8px;
+
+    background: #e2e8f0;
+
+    border-radius: 10px;
+
+    margin: 13px 0 25px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    height: 100%;
+
+    width: 5%;
+
+    background: var(--blue);
+
+    transition: .3s;
+
+}
+
+
+#pertanyaan {
+
+    margin-bottom: 18px;
+
+    font-size: 20px;
+
+}
+
+
+.pilihan {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 6px 0;
+
+    text-align: left;
+
+    border: 2px solid var(--border);
+
+    background: var(--card);
+
+    border-radius: 12px;
+
+}
+
+
+.pilihan.selected {
+
+    border-color: var(--blue);
+
+    background: #eff6ff;
+
+}
+
+
+.pilihan.benar {
+
+    border-color: #16a34a;
+
+    background: #dcfce7;
+
+}
+
+
+.pilihan.salah {
+
+    border-color: #dc2626;
+
+    background: #fee2e2;
+
+}
+
+
+.pembahasan {
+
+    margin-top: 18px;
+
+    padding: 17px;
+
+    background: #f0fdf4;
+
+    border-left: 4px solid #16a34a;
+
+    border-radius: 10px;
+
+}
+
+
+.pembahasan.salah {
+
+    background: #fff7ed;
+
+    border-left-color: #f97316;
+
+}
+
+
+.quiz-button {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+
+.quiz-button button {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* RUMUS */
+
+#cariRumus {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.rumus-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+
+}
+
+
+.rumus-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 17px;
+
+}
+
+
+.rumus-card small {
+
+    color: var(--blue);
+
+    font-weight: bold;
+
+}
+
+
+.rumus {
+
+    margin: 10px 0;
+
+    padding: 13px;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* HASIL */
+
+.hasil-card {
+
+    max-width: 500px;
+
+    margin: 50px auto;
+
+    background: var(--card);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+}
+
+
+.hasil-icon {
+
+    font-size: 50px;
+
+}
+
+
+.nilai-besar {
+
+    font-size: 70px;
+
+    font-weight: bold;
+
+    color: var(--blue);
+
+}
+
+
+.hasil-card button {
+
+    border: none;
+
+    padding: 12px 18px;
+
+    margin: 5px;
+
+    border-radius: 10px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+/* NAVIGASI */
+
+.bottom-nav {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 70px;
+
+    background: var(--card);
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    z-index: 20;
+
+}
+
+
+.bottom-nav button {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 21px;
+
+}
+
+
+.bottom-nav span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+}
+
+
+@media(max-width:650px) {
+
+    .menu-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .materi-grid,
+    .rumus-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .math-symbol,
+    .big-symbol {
+
+        display: none;
+
+    }
+
+}

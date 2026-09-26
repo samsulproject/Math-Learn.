@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MathLearn - Belajar Matematika</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            ∑ MathLearn
+        </div>
+
+        <button id="darkMode">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+    <main id="dashboard" class="page">
+
+        <section class="welcome">
+
+            <div>
+                <small>PLATFORM BELAJAR MATEMATIKA</small>
+
+                <h1>
+                    👋 Selamat Datang!
+                </h1>
+
+                <p>
+                    Belajar matematika dengan memahami
+                    rumus dan langkah pengerjaannya.
+                </p>
+            </div>
+
+            <div class="math-symbol">
+                x²
+            </div>
+
+        </section>
+
+
+        <!-- BANNER -->
+        <section class="banner">
+
+            <div>
+
+                <span>MATEMATIKA SMA</span>
+
+                <h2>
+                    Belajar Matematika
+                    Jadi Lebih Mudah
+                </h2>
+
+                <p>
+                    Pelajari materi, rumus,
+                    contoh soal dan latihan.
+                </p>
+
+                <button onclick="showPage('materi')">
+                    Mulai Belajar →
+                </button>
+
+            </div>
+
+            <div class="big-symbol">
+                ∫
+            </div>
+
+        </section>
+
+
+        <!-- STATISTIK -->
+        <section class="stats">
+
+            <div>
+                <b>20</b>
+                <span>Materi</span>
+            </div>
+
+            <div>
+                <b>400</b>
+                <span>Latihan</span>
+            </div>
+
+            <div>
+                <b id="totalSelesai">0</b>
+                <span>Soal Selesai</span>
+            </div>
+
+            <div>
+                <b id="rataNilai">0</b>
+                <span>Rata-rata</span>
+            </div>
+
+        </section>
+
+
+        <h2 class="judul-section">
+            Menu Belajar
+        </h2>
+
+
+        <!-- MENU -->
+        <section class="menu-grid">
+
+            <button
+                class="menu-card blue"
+                onclick="showPage('materi')">
+
+                <div class="menu-icon">
+                    📚
+                </div>
+
+                <b>Materi</b>
+
+                <span>
+                    20 materi
+                </span>
+
+            </button>
+
+
+            <button
+                class="menu-card cyan"
+                onclick="showPage('latihan')">
+
+                <div class="menu-icon">
+                    📝
+                </div>
+
+                <b>Latihan</b>
+
+                <span>
+                    400 soal
+                </span>
+
+            </button>
+
+
+            <button
+                class="menu-card orange"
+                onclick="showPage('rumus')">
+
+                <div class="menu-icon">
+                    📐
+                </div>
+
+                <b>Rumus</b>
+
+                <span>
+                    Rumus penting
+                </span>
+
+            </button>
+
+
+            <button
+                class="menu-card purple"
+                onclick="showPage('nilai')">
+
+                <div class="menu-icon">
+                    📊
+                </div>
+
+                <b>Nilai</b>
+
+                <span>
+                    Progress belajar
+                </span>
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- HALAMAN MATERI -->
+    <main id="materi" class="page">
+
+        <div class="page-title">
+
+            <button onclick="showPage('dashboard')">
+                ←
+            </button>
+
+            <div>
+                <small>MATERI</small>
+
+                <h2>
+                    Materi Matematika
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div id="daftarMateri"
+             class="materi-grid">
+        </div>
+
+    </main>
+
+
+
+    <!-- DETAIL MATERI -->
+    <main id="detailMateri" class="page">
+
+        <div class="page-title">
+
+            <button onclick="showPage('materi')">
+                ←
+            </button>
+
+            <div>
+
+                <small id="kategoriMateri">
+                    MATERI
+                </small>
+
+                <h2 id="judulMateri">
+                    Persamaan Linear
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="isiMateri">
+        </div>
+
+    </main>
+
+
+
+    <!-- LATIHAN -->
+    <main id="latihan" class="page">
+
+        <div class="page-title">
+
+            <button onclick="showPage('dashboard')">
+                ←
+            </button>
+
+            <div>
+
+                <small>LATIHAN</small>
+
+                <h2>
+                    Pilih Latihan
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="keterangan">
+            Setiap materi memiliki 20 latihan soal.
+        </p>
+
+
+        <div id="daftarLatihan"
+             class="materi-grid">
+        </div>
+
+    </main>
+
+
+
+    <!-- HALAMAN QUIZ -->
+    <main id="quiz" class="page">
+
+        <div class="quiz-header">
+
+            <button onclick="showPage('latihan')">
+                ←
+            </button>
+
+            <div>
+
+                <small id="quizKategori">
+                    LATIHAN
+                </small>
+
+                <h2 id="quizJudul">
+                    Persamaan Linear
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="quiz-card">
+
+            <div class="quiz-info">
+
+                <span id="nomorSoal">
+                    Soal 1 / 20
+                </span>
+
+                <span id="nilaiQuiz">
+                    Nilai: 0
+                </span>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div id="progressBar">
+                </div>
+
+            </div>
+
+
+            <h3 id="pertanyaan">
+            </h3>
+
+
+            <div id="pilihan">
+            </div>
+
+
+            <div
+                id="pembahasan"
+                class="pembahasan hidden">
+            </div>
+
+
+            <div class="quiz-button">
+
+                <button
+                    id="btnPeriksa"
+                    onclick="periksaJawaban()">
+
+                    Periksa Jawaban
+
+                </button>
+
+
+                <button
+                    id="btnBerikutnya"
+                    class="hidden"
+                    onclick="soalBerikutnya()">
+
+                    Soal Berikutnya →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- HASIL -->
+    <main id="hasil" class="page">
+
+        <div class="hasil-card">
+
+            <div class="hasil-icon">
+                🎉
+            </div>
+
+            <small>
+                HASIL LATIHAN
+            </small>
+
+            <h2 id="hasilMateri">
+                Persamaan Linear
+            </h2>
+
+            <div
+                id="hasilNilai"
+                class="nilai-besar">
+
+                0
+
+            </div>
+
+            <p id="hasilText">
+            </p>
+
+
+            <button onclick="ulangLatihan()">
+                🔄 Ulangi Latihan
+            </button>
+
+
+            <button
+                class="secondary"
+                onclick="showPage('latihan')">
+
+                Pilih Materi
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- RUMUS -->
+    <main id="rumus" class="page">
+
+        <div class="page-title">
+
+            <button onclick="showPage('dashboard')">
+                ←
+            </button>
+
+            <div>
+
+                <small>REFERENSI</small>
+
+                <h2>
+                    Kumpulan Rumus
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="cariRumus"
+            placeholder="🔎 Cari rumus..."
+        >
+
+
+        <div
+            id="daftarRumus"
+            class="rumus-grid">
+        </div>
+
+    </main>
+
+
+
+    <!-- NILAI -->
+    <main id="nilai" class="page">
+
+        <div class="page-title">
+
+            <button onclick="showPage('dashboard')">
+                ←
+            </button>
+
+            <div>
+
+                <small>PROGRESS</small>
+
+                <h2>
+                    Nilai Saya
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="daftarNilai">
+        </div>
+
+    </main>
+
+
+
+    <!-- NAVIGASI BAWAH -->
+    <nav class="bottom-nav">
+
+        <button onclick="showPage('dashboard')">
+            🏠
+            <span>Home</span>
+        </button>
+
+        <button onclick="showPage('materi')">
+            📚
+            <span>Materi</span>
+        </button>
+
+        <button onclick="showPage('latihan')">
+            📝
+            <span>Latihan</span>
+        </button>
+
+        <button onclick="showPage('rumus')">
+            📐
+            <span>Rumus</span>
+        </button>
+
+        <button onclick="showPage('nilai')">
+            📊
+            <span>Nilai</span>
+        </button>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
